@@ -33,17 +33,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: peter-evans/create-pull-request@v3
+      - uses: repo-sync/pull-request@v2
         with:
-          token: ${{ secrets.PAT }}
-          commit-message: My first auto PR
+          github_token: ${{ secrets.PAT }}
           title: Awesome PR by ${{ github.actor }}
           body: |
             Test de création de PR grâce a github action
 
             Branche en cours ${{ github.ref }}
 
-          branch: ${{ github.ref }}  
+          destination_branch: ${{ github.ref }}  
 
 
 
