@@ -1,0 +1,28 @@
+name: "Excerice 1 github action"
+on: [push, pull_request]
+jobs:
+  checkout-branche:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          git checkout master
+
+  install-dependeces:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - run: |
+          pip install pipenv
+          pipenv --python 3.8
+          pipenv install nose pylint --dev
+
+  run-linter-in-app:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          pipenv shell
+          pipenv run pylint app
+          nosetests
