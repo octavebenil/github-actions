@@ -24,7 +24,6 @@ jobs:
           pipenv --python 3.8
           pipenv install nose pylint --dev
 
-          pipenv shell
           pipenv run pylint app
-          nosetests
+          pipenv run nosetests
           
