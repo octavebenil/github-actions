@@ -1,11 +1,16 @@
 name: "Excerice 1 github action"
-on: [push, pull_request]
+on: 
+  push:
+    branches: [master]
+  pull_requests:
+    branches: [master]  
 jobs:
   checkout-branche:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          git checkout master
+      - uses: actions/checkout@v2
+        with:
+          ref: master
 
   install-dependeces:
     runs-on: ubuntu-latest
