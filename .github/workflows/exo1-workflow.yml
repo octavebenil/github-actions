@@ -42,8 +42,6 @@ jobs:
 
             Branche en cours ${{ github.ref }}
 
-          destination_branch: ${{ github.ref }}  
-
 
 
           
