@@ -36,8 +36,8 @@ jobs:
       - uses: repo-sync/pull-request@v2
         with:
           github_token: ${{ secrets.PAT }}
-          title: Awesome PR by ${{ github.actor }}
-          body: |
+          pr_title: Awesome PR by ${{ github.actor }}
+          pr_body: |
             Test de création de PR grâce a github action
 
             Branche en cours ${{ github.ref }}
