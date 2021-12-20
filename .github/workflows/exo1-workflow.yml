@@ -24,10 +24,7 @@ jobs:
           pipenv --python 3.8
           pipenv install nose pylint --dev
 
-  run-linter-in-app:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
           pipenv shell
           pipenv run pylint app
           nosetests
+          
