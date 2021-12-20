@@ -23,7 +23,7 @@ jobs:
           pip install pipenv
           pipenv --python 3.8
           pipenv install nose pylint --dev
-
+          pwd
           pipenv run pylint app
           pipenv run nosetests
           
