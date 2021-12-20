@@ -23,7 +23,9 @@ jobs:
           pip install pipenv
           pipenv --python 3.8
           pipenv install nose pylint --dev
-          pwd
-          pipenv run pylint app
-          pipenv run nosetests
+      - name: launch lint on app
+        run:  pipenv run pylint app
+
+      - name: Launch test
+        run: pipenv run nosetests
           
