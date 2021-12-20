@@ -12,17 +12,20 @@ jobs:
         with:
           ref: master
 
-  install-dependeces:
+  workflow-jobs-main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-      - run: |
+          
+      - name: Installing dependences
+        run: |
           pip install pipenv
           pipenv --python 3.8
           pipenv install nose pylint --dev
+
       - name: launch lint on app
         run:  pipenv run pylint app
 
