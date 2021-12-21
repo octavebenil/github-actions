@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: repo-sync/pull-request@v2
         with:
-          github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: Awesome PR by ${{ github.actor }}
           pr_body: |
             Test de création de PR grâce a github action
